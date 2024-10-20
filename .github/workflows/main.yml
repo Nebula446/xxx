@@ -7,7 +7,7 @@ jobs:
     - name: Set up API Authentication
       run: |
         $apiUrl = "https://my.serverspace.com.tr/api"
-        $apiKey = ${{ secrets.API_KEY }}  # API anahtarınızı GitHub Secrets'ta saklayın
+        $apiKey = "${{ secrets.API_KEY }}"  # GitHub Secrets'tan API anahtarını alın
         $headers = @{
           "Authorization" = "Bearer $apiKey"
           "Content-Type"  = "application/json"

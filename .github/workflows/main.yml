@@ -20,7 +20,9 @@ jobs:
           "plan" = "basic"  # Kullanmak istediğiniz plan
         } | ConvertTo-Json
 
-        Invoke-RestMethod -Uri "$apiUrl/vds" -Method Post -Headers $headers -Body $body
+        $fullUrl = "$apiUrl/vds"
+        Write-Host "Full API URL: $fullUrl"  # Debugging
+        Invoke-RestMethod -Uri $fullUrl -Method Post -Headers $headers -Body $body
 
     - name: Check VDS Status
       run: |
